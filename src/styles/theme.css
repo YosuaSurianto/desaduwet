@@ -1,0 +1,61 @@
+/**
+ * theme.css
+ * ---------------------------------------------------------------------------
+ * Design tokens for Desa Duwet — "Dapur Legenda Nusantara".
+ * Palette is drawn from the village's own materials: tanah liat (clay),
+ * daun pisang & beras (rice cream), zamrud sawah (paddy emerald) and
+ * kunyit/rempah (turmeric gold). Mapped into Tailwind v4 via @theme inline
+ * so every token is usable as a utility class (bg-clay, text-emerald-500, …).
+ */
+
+@theme inline {
+  /* Brand palette -------------------------------------------------------- */
+  --color-ink: #130f0a;
+  --color-ink-soft: #241b12;
+
+  --color-cream-50: #fdfaf3;
+  --color-cream-100: #f6efe1;
+  --color-cream-200: #ecdfc6;
+
+  --color-clay-300: #c98a5e;
+  --color-clay-400: #a8613a;
+  --color-clay-500: #8a4a2d;
+  --color-clay-600: #6c3a22;
+  --color-clay-700: #4f2a19;
+
+  --color-emerald-300: #6fb98a;
+  --color-emerald-400: #3f8f66;
+  --color-emerald-500: #1f5f45;
+  --color-emerald-600: #164634;
+  --color-emerald-700: #0f3226;
+
+  --color-gold-300: #f0c869;
+  --color-gold-400: #d9a441;
+  --color-gold-500: #b9822a;
+
+  /* Semantic aliases ------------------------------------------------------ */
+  --color-background: var(--color-ink);
+  --color-foreground: var(--color-cream-50);
+
+  /* Typography ------------------------------------------------------------ */
+  --font-display: var(--font-fraunces), "Iowan Old Style", serif;
+  --font-sans: var(--font-jakarta), "Inter", system-ui, sans-serif;
+
+  /* Motion timings shared between CSS, GSAP and Framer Motion ------------ */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-slow: 900ms;
+}
+
+/* Mobile-first: gutter widens once we're past the phone breakpoint. Kept as a
+   plain CSS custom property (not inside @theme) because @theme is a
+   build-time, top-level construct in Tailwind v4 and cannot be re-declared
+   inside a media query. Consumed via the `.px-gutter` utility in base.css. */
+:root {
+  --container-gutter: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --container-gutter: 2.5rem;
+  }
+}

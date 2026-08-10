@@ -1,0 +1,16 @@
+/**
+ * globals.css
+ * ---------------------------------------------------------------------------
+ * Single entry point. Keeps this file tiny on purpose — every real rule
+ * lives in its own partial under `src/styles/` (tokens, resets, glass
+ * utilities, scroll/horizontal-scroll styles, keyframe animations) so no
+ * single CSS file grows into a dumping ground.
+ */
+
+@import "tailwindcss";
+
+@import "../styles/theme.css";
+@import "../styles/base.css";
+@import "../styles/glass.css";
+@import "../styles/scroll.css";
+@import "../styles/animations.css";

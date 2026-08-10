@@ -1,0 +1,90 @@
+/**
+ * base.css
+ * ---------------------------------------------------------------------------
+ * Global resets & base typography. The site commits to one cinematic dark
+ * mode (ink background, cream ink) so the fixed video layer behind the
+ * content always reads correctly — no light/dark switching.
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream-50);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+/* Visible, on-brand keyboard focus ring — deliberate rather than left to
+   whatever the browser default is, since it has to read on top of a
+   moving video background. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-ink);
+}
+
+/* Slim, earthy scrollbar instead of the OS default — desktop only, mobile
+   browsers already hide theirs. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-clay-500);
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+}
+
+/* Utility: responsive page gutter driven by the --container-gutter token
+   defined in theme.css. */
+.px-gutter {
+  padding-inline: var(--container-gutter);
+}
+
+/* Respect users who've asked for less motion: collapse to instant states. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

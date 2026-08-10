@@ -1,0 +1,68 @@
+/**
+ * scroll.css
+ * ---------------------------------------------------------------------------
+ * Styling for the GSAP-driven horizontal scroll ("Pariwisata & Edukasi")
+ * section and small scroll-related utilities. The horizontal motion itself
+ * is computed in JS (see components/sections/TourismSection.tsx); this file
+ * only holds the static layout + scrollbar cosmetics.
+ */
+
+.hscroll-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hscroll-track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  will-change: transform;
+}
+
+.hscroll-card {
+  flex: 0 0 auto;
+  width: min(86vw, 22rem);
+}
+
+@media (min-width: 1024px) {
+  .hscroll-card {
+    width: min(38vw, 30rem);
+  }
+}
+
+/* Hide scrollbars on elements that scroll natively (e.g. the mobile
+   fallback horizontal list) without losing touch scroll momentum. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cinematic film grain sits above the video, below the content, everywhere
+   on the page — see AnimatedBackground.tsx for the element it decorates. */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 1.3s steps(4) infinite;
+}
+
+@keyframes grain-shift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-2%, 1%);
+  }
+  100% {
+    transform: translate(1%, -1%);
+  }
+}

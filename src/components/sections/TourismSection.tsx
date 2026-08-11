@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { tourismCards } from "@/data";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
+import { useIsDesktop } from "@/hooks/useMediaQuery";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
@@ -15,23 +16,24 @@ import TourismCard from "./tourism/TourismCard";
 /**
  * Pins the section and drives the card track horizontally as the user
  * scrolls vertically — the classic GSAP ScrollTrigger horizontal-scroll
- * recipe. `invalidateOnRefresh` keeps the travel distance correct on resize
- * (e.g. rotating a phone), which is what makes this safe to leave on for
- * mobile instead of only enabling it on desktop.
- *
- * When the user prefers reduced motion, the pin/scrub is skipped entirely
- * and the track becomes a plain native horizontally-scrollable list — the
- * cards stay reachable, just without the scroll-jacking.
+ * recipe. Desktop-only: on a narrow viewport, two ~86vw-wide cards side by
+ * side mid-scrub have no room to breathe and their text clips at the
+ * screen edge, which reads as broken rather than as a transition. Below
+ * the `lg` breakpoint (and whenever reduced motion is preferred) the pin
+ * is skipped entirely and the track becomes a plain native
+ * horizontally-scrollable list — same cards, swipe instead of scroll-jack.
  */
 export default function TourismSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const reduceMotion = usePrefersReducedMotion();
+  const isDesktop = useIsDesktop();
+  const useFallback = reduceMotion || !isDesktop;
 
   useIsomorphicLayoutEffect(() => {
     const section = sectionRef.current;
     const track = trackRef.current;
-    if (!section || !track || reduceMotion) return;
+    if (!section || !track || useFallback) return;
 
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
@@ -49,14 +51,14 @@ export default function TourismSection() {
     }, section);
 
     return () => ctx.revert();
-  }, [reduceMotion]);
+  }, [useFallback]);
 
   return (
     <section
       id="wisata"
       ref={sectionRef}
       className={`hscroll-section relative z-10 flex flex-col justify-center py-20 ${
-        reduceMotion ? "" : "min-h-dvh"
+        useFallback ? "" : "min-h-dvh"
       }`}
     >
       <div className="px-gutter mb-10">
@@ -75,7 +77,7 @@ export default function TourismSection() {
 
       <div
         ref={trackRef}
-        className={`hscroll-track px-gutter ${reduceMotion ? "no-scrollbar overflow-x-auto" : ""}`}
+        className={`hscroll-track px-gutter ${useFallback ? "no-scrollbar overflow-x-auto" : ""}`}
       >
         {tourismCards.map((card) => (
           <TourismCard key={card.id} card={card} />

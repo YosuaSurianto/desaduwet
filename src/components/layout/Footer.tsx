@@ -1,7 +1,6 @@
-import { contactInfo, villageDukuh } from "@/data";
+import { contactInfo } from "@/data";
 
 import GlassPanel from "../ui/GlassPanel";
-import Marquee from "../ui/Marquee";
 
 export default function Footer() {
   const mapsHref = `https://www.google.com/maps?q=${contactInfo.coordinates.lat},${contactInfo.coordinates.lng}`;
@@ -49,8 +48,6 @@ export default function Footer() {
           </div>
         </div>
       </GlassPanel>
-
-      <Marquee items={villageDukuh} className="mt-10" />
 
       <div className="mx-auto mt-10 flex max-w-5xl flex-col items-center justify-between gap-3 text-xs text-cream-100/40 sm:flex-row">
         <p>© {new Date().getFullYear()} Pemerintah Desa Duwet, Kecamatan Baki, Sukoharjo.</p>

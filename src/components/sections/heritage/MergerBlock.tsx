@@ -46,7 +46,7 @@ export default function MergerBlock() {
       <div className="mt-6 space-y-3 border-l-2 border-gold-400/60 pl-4">
         {merger.leaders.map((leader, index) => (
           <RevealOnScroll key={leader.name} delay={0.35 + index * 0.08}>
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <div className="flex flex-col gap-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-3 sm:gap-y-1">
               <p className="font-display text-lg text-cream-50">{leader.name}</p>
               <p className="text-sm text-cream-100/60">Kepala Desa · {leader.period}</p>
             </div>

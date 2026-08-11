@@ -49,8 +49,8 @@ export const heritageContent = {
       },
     ],
     leaders: [
-      { name: "S. Sastro Saputro", period: "1940–1951" },
-      { name: "Sudarno", period: "1952–1965" },
+      { name: "S. Sastro Saputro", period: "1940 sampai 1951" },
+      { name: "Sudarno", period: "1952 sampai 1965" },
     ] as VillageLeader[],
     leadershipNote:
       "Hingga tahun 2023, tercatat sudah 10 kali pergantian kepala desa, sepuluh generasi pemimpin yang mewariskan tongkat estafet yang sama.",
@@ -68,8 +68,8 @@ export const heritageContent = {
       "Bersama Desa Menuran, Desa Duwet adalah dapur utama dan tempat asal usul para pengrajin legendaris Nasi Liwet, hidangan nasi gurih santan yang kini menjadi identitas Sukoharjo dan Solo di mata Indonesia.",
     body: [
       "Meracik nasi liwet bukan tren baru di desa ini. Tradisi ini adalah warisan turun-temurun yang dipercaya bermula sejak berdirinya Kerajaan Mataram Islam pada 1582, hampir empat setengah abad yang lalu. Pada masanya, kuliner dari desa-desa ini kabarnya kerap disajikan untuk kalangan bangsawan keraton.",
-      "Serat Centhini, manuskrip Jawa yang ditulis pada 1814–1823, bahkan mencatat nasi liwet sebagai sajian yang dihidangkan saat gempa bumi melanda tanah Jawa, semacam ritual syukur dan penolak bala. Sebagian catatan juga menautkannya dengan nasi samin kegemaran Nabi Muhammad, yang diadaptasi warga lokal menyesuaikan bahan yang tersedia di tanah Jawa.",
-      "Warga Menuran mulai memperkenalkan nasi liwet ke tengah Kota Surakarta pada tahun 1934, dan sejak era Sri Susuhunan Pakubuwono IX (1861–1893) hidangan ini sudah akrab di lingkungan Keraton Kasunanan. Warga Duwet meneruskan tradisi yang sama: menanak nasi bersantan sejak dini hari, membungkusnya di atas pincuk daun pisang, lalu menjajakannya ke seluruh penjuru Surakarta setiap pagi.",
+      "Serat Centhini, manuskrip Jawa yang ditulis antara 1814 sampai 1823, bahkan mencatat nasi liwet sebagai sajian yang dihidangkan saat gempa bumi melanda tanah Jawa, semacam ritual syukur dan penolak bala. Sebagian catatan juga menautkannya dengan nasi samin kegemaran Nabi Muhammad, yang diadaptasi warga lokal menyesuaikan bahan yang tersedia di tanah Jawa.",
+      "Warga Menuran mulai memperkenalkan nasi liwet ke tengah Kota Surakarta pada tahun 1934, dan sejak era Sri Susuhunan Pakubuwono IX (memerintah 1861 sampai 1893) hidangan ini sudah akrab di lingkungan Keraton Kasunanan. Warga Duwet meneruskan tradisi yang sama: menanak nasi bersantan sejak dini hari, membungkusnya di atas pincuk daun pisang, lalu menjajakannya ke seluruh penjuru Surakarta setiap pagi.",
     ],
     servedWith: [
       "Nasi gurih tanak santan",
@@ -80,8 +80,8 @@ export const heritageContent = {
     ],
     milestones: [
       { year: "1582", label: "Tradisi meracik nasi liwet dimulai sejak berdirinya Kerajaan Mataram Islam." },
-      { year: "1814–1823", label: "Dicatat dalam Serat Centhini sebagai sajian syukur & penolak bala saat gempa." },
-      { year: "1861–1893", label: "Populer di lingkungan Keraton Kasunanan Surakarta pada era Sri Susuhunan Pakubuwono IX." },
+      { year: "1814 s.d. 1823", label: "Dicatat dalam Serat Centhini sebagai sajian syukur & penolak bala saat gempa." },
+      { year: "1861 s.d. 1893", label: "Populer di lingkungan Keraton Kasunanan Surakarta pada era Sri Susuhunan Pakubuwono IX." },
       { year: "1934", label: "Warga Menuran & Duwet mulai menjual langsung ke Kota Surakarta." },
       { year: "Des 2012", label: "Dinobatkan sebagai satu dari 30 ikon kuliner tradisional Nusantara." },
       { year: "19 Jun 2022", label: "Ditetapkan ikon kuliner Kota Surakarta oleh Forum Budaya Mataram, dibagikan 1.000 porsi saat Solo Car Free Day." },

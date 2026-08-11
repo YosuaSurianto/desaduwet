@@ -1,14 +1,17 @@
 /**
- * media.ts — external media assets.
+ * media.ts — background video asset.
  *
- * Temporary footage per the brief: royalty-free drone clip of rice terraces
- * with coconut & palm trees (Pexels, license: free to use). Swap `videoSrc`
- * for on-site footage of Desa Duwet's own sawah whenever it's available —
- * every other file only depends on this constant, not the URL itself.
+ * Served locally from public/videos/ instead of hotlinking Pexels' CDN, and
+ * re-encoded specifically for scroll-scrubbing: every frame is its own
+ * keyframe (`-g 1 -keyint_min 1` in the ffmpeg pass under assets-src/video/),
+ * so GSAP can seek `video.currentTime` to any point instantly instead of
+ * decoding forward from the nearest keyframe — that decode-forward cost was
+ * the actual cause of the "kaku"/stiff scrubbing feel, not the GSAP tween
+ * itself. Same visual footage as before, just re-encoded; nothing about the
+ * background's look was changed.
  */
 
 export const scrollVideo = {
-  src: "https://videos.pexels.com/video-files/3191710/3191710-uhd_2560_1440_25fps.mp4",
-  credit: "Pressmaster · Pexels (royalty-free)",
+  src: "/videos/hero-sawah-scrub.mp4",
   description: "Drone footage rice terraces dengan pohon kelapa & palem",
 };

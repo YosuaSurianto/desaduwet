@@ -22,6 +22,12 @@ type TextRevealProps = {
   delay?: number;
   /** Stagger (s) between each word. */
   stagger?: number;
+  /**
+   * false = animate immediately on mount instead of waiting for scroll
+   * intersection — see the same note on RevealOnScroll. Use for the hero
+   * headline, which is on screen at first paint on every device.
+   */
+  inView?: boolean;
 };
 
 /**
@@ -36,16 +42,19 @@ export default function TextReveal({
   wordClassName = "",
   delay = 0,
   stagger = 0.055,
+  inView = true,
 }: TextRevealProps) {
   const Tag = MOTION_TAGS[as];
   const words = text.split(" ");
+  const trigger = inView
+    ? { whileInView: "visible", viewport: { once: true, amount: 0.3 } }
+    : { animate: "visible" };
 
   return (
     <Tag
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.6 }}
+      {...trigger}
       transition={{ staggerChildren: stagger, delayChildren: delay }}
     >
       {words.map((word, index) => (

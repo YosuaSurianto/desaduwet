@@ -50,7 +50,7 @@ export const tourismCards: TourismCard[] = [
     description:
       "Coffee shop dengan gazebo-gazebo menghadap hamparan sawah hijau di Dukuh Gondangsari, jadi tempat singgah favorit warga Solo Raya untuk sarapan, ngopi, sampai makan besar sambil menikmati angin sawah.",
     features: [
-      "Buka tiap hari, sekitar pukul 08.00–23.00",
+      "Buka tiap hari, sekitar pukul 08.00 sampai 23.00",
       "Menu masakan Jawa & aneka kopi",
       "Gazebo luas, cocok untuk rombongan keluarga",
       "Sekitar 3 km / 15 menit dari pusat Kota Solo",

@@ -22,11 +22,16 @@ export default function NasiLiwetBlock() {
       </RevealOnScroll>
 
       {/* Real 3D model of the dish itself, floating alongside its origin
-          story, instead of an abstract stand-in for "dapur" and "sawah". */}
+          story, instead of an abstract stand-in for "dapur" and "sawah".
+          UI params beyond the user's original ones (ui_infos/ui_help/
+          ui_settings/ui_vr/ui_ar=0, ui_theme=dark, dnt=1) are Sketchfab's
+          own documented, free embed options — they declutter the chrome
+          without touching the required attribution. The watermark itself
+          can't be removed on a free Sketchfab account, so it stays. */}
       <RevealOnScroll delay={0.15} className="-mx-gutter my-8 sm:mx-0 sm:my-10">
         <SketchfabEmbed
           title="Indonesian Food Nasi Liwet"
-          embedUrl="https://sketchfab.com/models/a37c2fe05504460abf16c2bcdcaf3438/embed?autostart=1&preload=1&transparent=1"
+          embedUrl="https://sketchfab.com/models/a37c2fe05504460abf16c2bcdcaf3438/embed?autostart=1&preload=1&transparent=1&ui_theme=dark&ui_infos=0&ui_help=0&ui_settings=0&ui_vr=0&ui_ar=0&dnt=1"
           modelUrl="https://sketchfab.com/3d-models/indonesian-food-nasi-liwet-a37c2fe05504460abf16c2bcdcaf3438"
           modelName="Indonesian Food Nasi Liwet"
           authorName="Pramudya Art"

@@ -9,6 +9,16 @@ type RevealOnScrollProps = {
   delay?: number;
   y?: number;
   once?: boolean;
+  /**
+   * false = animate immediately on mount instead of waiting for scroll
+   * intersection. Use for content that's already on screen at first paint
+   * (the hero) — on some real mobile browsers the dynamic toolbar is still
+   * resizing the viewport (`dvh`) when `whileInView`'s IntersectionObserver
+   * takes its first reading, which can leave the element stuck at its
+   * `initial` (invisible) state forever. Below-the-fold sections should
+   * keep the default (true).
+   */
+  inView?: boolean;
 };
 
 /**
@@ -22,13 +32,17 @@ export default function RevealOnScroll({
   delay = 0,
   y = 32,
   once = true,
+  inView = true,
 }: RevealOnScrollProps) {
+  const trigger = inView
+    ? { whileInView: { opacity: 1, y: 0 }, viewport: { once, amount: 0.15 } }
+    : { animate: { opacity: 1, y: 0 } };
+
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, amount: 0.3 }}
+      {...trigger}
       transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}

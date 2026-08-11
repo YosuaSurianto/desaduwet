@@ -50,8 +50,8 @@ export const contactInfo = {
   province: "Jawa Tengah",
   coordinates: { lat: -7.59333, lng: 110.76944 },
   officeHours: [
-    { days: "Senin – Kamis", hours: "07.30 – 15.00 WIB" },
-    { days: "Jumat", hours: "07.30 – 11.00 WIB" },
-    { days: "Sabtu – Minggu", hours: "Tutup" },
+    { days: "Senin sampai Kamis", hours: "07.30 sampai 15.00 WIB" },
+    { days: "Jumat", hours: "07.30 sampai 11.00 WIB" },
+    { days: "Sabtu dan Minggu", hours: "Tutup" },
   ],
 };

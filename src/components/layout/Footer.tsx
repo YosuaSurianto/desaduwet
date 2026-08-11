@@ -1,4 +1,4 @@
-import { contactInfo, scrollVideo, villageDukuh } from "@/data";
+import { contactInfo, villageDukuh } from "@/data";
 
 import GlassPanel from "../ui/GlassPanel";
 import Marquee from "../ui/Marquee";
@@ -54,7 +54,7 @@ export default function Footer() {
 
       <div className="mx-auto mt-10 flex max-w-5xl flex-col items-center justify-between gap-3 text-xs text-cream-100/40 sm:flex-row">
         <p>© {new Date().getFullYear()} Pemerintah Desa Duwet, Kecamatan Baki, Sukoharjo.</p>
-        <p>Cuplikan video: {scrollVideo.credit}</p>
+        <p>Dibuat oleh Yosua Surianto (Dracoo).</p>
       </div>
     </footer>
   );

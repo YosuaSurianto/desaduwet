@@ -9,11 +9,10 @@ export type HeroStat = {
 
 export const heroContent = {
   kicker: "Kecamatan Baki · Kabupaten Sukoharjo · Jawa Tengah",
-  titleLines: ["Dapur Legenda", "Nusantara"],
-  villageName: "Desa Duwet",
+  titleLines: ["Desa", "Duwet"],
+  villageName: "Dapur Legenda Nusantara",
   subtitle:
     "Sejak era Mataram Islam, aroma nasi liwet dari dapur-dapur Desa Duwet telah mengharumkan tanah Sukoharjo, hingga kini berdiri sebagai Warisan Budaya Takbenda Indonesia.",
-  scrollCue: "Gulir untuk memulai perjalanan",
   stats: [
     { value: "1940", label: "Dua kelurahan bersatu menjadi Desa Duwet" },
     { value: "±440", label: "Tahun tradisi nasi liwet, sejak Mataram Islam" },

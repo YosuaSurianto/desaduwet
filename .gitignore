@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 prompt_untuk_claude.md
+
+# raw/source 3D assets (Blender exports etc.) — too large for git, never
+# served directly; only optimized output (e.g. compressed .glb) goes in
+# public/ once converted
+/assets-src/

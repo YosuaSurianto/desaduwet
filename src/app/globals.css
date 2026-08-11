@@ -8,9 +8,11 @@
  */
 
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @import "../styles/theme.css";
 @import "../styles/base.css";
 @import "../styles/glass.css";
 @import "../styles/scroll.css";
 @import "../styles/animations.css";
+@import "../styles/map.css";

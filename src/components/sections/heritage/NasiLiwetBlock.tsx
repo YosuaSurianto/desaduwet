@@ -2,7 +2,7 @@ import { heritageContent } from "@/data";
 
 import RevealOnScroll from "../../ui/RevealOnScroll";
 import TextReveal from "../../ui/TextReveal";
-import HeritageCanvas from "../../three/HeritageCanvas";
+import SketchfabEmbed from "../../media/SketchfabEmbed";
 import Timeline from "./Timeline";
 
 const { nasiLiwet } = heritageContent;
@@ -21,10 +21,17 @@ export default function NasiLiwetBlock() {
         </p>
       </RevealOnScroll>
 
-      {/* 3D canvas — the interactive centerpiece the brief asks for right
-          here, floating alongside the origin story of the dish. */}
+      {/* Real 3D model of the dish itself, floating alongside its origin
+          story, instead of an abstract stand-in for "dapur" and "sawah". */}
       <RevealOnScroll delay={0.15} className="-mx-gutter my-8 sm:mx-0 sm:my-10">
-        <HeritageCanvas />
+        <SketchfabEmbed
+          title="Indonesian Food Nasi Liwet"
+          embedUrl="https://sketchfab.com/models/a37c2fe05504460abf16c2bcdcaf3438/embed?autostart=1&preload=1&transparent=1"
+          modelUrl="https://sketchfab.com/3d-models/indonesian-food-nasi-liwet-a37c2fe05504460abf16c2bcdcaf3438"
+          modelName="Indonesian Food Nasi Liwet"
+          authorName="Pramudya Art"
+          authorUrl="https://sketchfab.com/pramudya.bagasart"
+        />
       </RevealOnScroll>
 
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">

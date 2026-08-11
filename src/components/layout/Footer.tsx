@@ -53,7 +53,7 @@ export default function Footer() {
       <Marquee items={villageDukuh} className="mt-10" />
 
       <div className="mx-auto mt-10 flex max-w-5xl flex-col items-center justify-between gap-3 text-xs text-cream-100/40 sm:flex-row">
-        <p>© {new Date().getFullYear()} Pemerintah Desa Duwet — Kecamatan Baki, Sukoharjo.</p>
+        <p>© {new Date().getFullYear()} Pemerintah Desa Duwet, Kecamatan Baki, Sukoharjo.</p>
         <p>Cuplikan video: {scrollVideo.credit}</p>
       </div>
     </footer>

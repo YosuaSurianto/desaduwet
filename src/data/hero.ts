@@ -12,7 +12,7 @@ export const heroContent = {
   titleLines: ["Dapur Legenda", "Nusantara"],
   villageName: "Desa Duwet",
   subtitle:
-    "Sejak era Mataram Islam, aroma nasi liwet dari dapur-dapur Desa Duwet telah mengharumkan tanah Sukoharjo — kini berdiri sebagai Warisan Budaya Takbenda Indonesia.",
+    "Sejak era Mataram Islam, aroma nasi liwet dari dapur-dapur Desa Duwet telah mengharumkan tanah Sukoharjo, hingga kini berdiri sebagai Warisan Budaya Takbenda Indonesia.",
   scrollCue: "Gulir untuk memulai perjalanan",
   stats: [
     { value: "1940", label: "Dua kelurahan bersatu menjadi Desa Duwet" },

@@ -53,22 +53,22 @@ export default function TourismSection() {
 
   return (
     <section
-      id="pariwisata"
+      id="wisata"
       ref={sectionRef}
       className={`hscroll-section relative z-10 flex flex-col justify-center py-20 ${
         reduceMotion ? "" : "min-h-dvh"
       }`}
     >
       <div className="px-gutter mb-10">
-        <SectionLabel index="02" label="Bagian II — Pariwisata & Edukasi" />
+        <SectionLabel label="Wisata Duwet" />
         <TextReveal
           as="h2"
-          text="Sawah untuk Belajar, Kolam untuk Bergembira"
+          text="Sawah untuk Belajar, Kopi untuk Bersantai"
           className="mt-4 max-w-2xl font-display text-3xl leading-[1.05] text-cream-50 sm:text-5xl"
         />
         <RevealOnScroll delay={0.15} className="mt-4 max-w-xl">
           <p className="text-sm leading-relaxed text-cream-100/70 sm:text-base">
-            Geser untuk menjelajah dua wajah wisata Desa Duwet — dari edukasi sawah yang menenangkan hingga taman air yang penuh keceriaan keluarga.
+            Geser untuk menjelajah dua wajah wisata Desa Duwet, dari edukasi sawah yang menenangkan hingga ngopi santai di tengah sawah Gondangsari.
           </p>
         </RevealOnScroll>
       </div>

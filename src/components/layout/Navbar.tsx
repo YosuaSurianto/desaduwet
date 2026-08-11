@@ -24,12 +24,12 @@ export default function Navbar() {
           Desa Duwet
         </a>
 
-        <nav className="hidden items-center gap-8 sm:flex">
+        <nav className="hidden items-center gap-5 sm:flex lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-wide text-cream-100/80 transition-colors hover:text-gold-300"
+              className="text-xs font-medium uppercase tracking-wide text-cream-100/80 transition-colors hover:text-gold-300 lg:text-sm"
             >
               {link.label}
             </a>

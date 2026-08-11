@@ -7,9 +7,9 @@
  */
 
 export const siteMeta = {
-  title: "Desa Duwet — Dapur Legenda Nusantara",
+  title: "Desa Duwet: Dapur Legenda Nusantara",
   description:
-    "Desa Duwet, Kecamatan Baki, Kabupaten Sukoharjo, Jawa Tengah — dapur asal Nasi Liwet yang menjadi Warisan Budaya Takbenda Indonesia. Jelajahi sejarah, wisata edukasi sawah, Duwet Waterpark, dan UMKM desa.",
+    "Desa Duwet, Kecamatan Baki, Kabupaten Sukoharjo, Jawa Tengah, adalah dapur asal Nasi Liwet yang menjadi Warisan Budaya Takbenda Indonesia. Jelajahi sejarah, ekonomi warga, wisata sawah, budaya, dan lokasi Desa Duwet.",
   locale: "id_ID",
 };
 
@@ -19,9 +19,11 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Warisan", href: "#warisan" },
-  { label: "Pariwisata", href: "#pariwisata" },
-  { label: "UMKM", href: "#umkm" },
+  { label: "Sejarah", href: "#warisan" },
+  { label: "Ekonomi", href: "#ekonomi" },
+  { label: "Wisata", href: "#wisata" },
+  { label: "Budaya", href: "#budaya" },
+  { label: "Lokasi", href: "#lokasi" },
   { label: "Kontak", href: "#kontak" },
 ];
 

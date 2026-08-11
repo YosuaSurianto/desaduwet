@@ -11,7 +11,7 @@ export default function HeritageSection() {
   return (
     <section id="warisan" className="relative z-10 px-gutter py-24 sm:py-32">
       <div className="glass-dense mx-auto max-w-5xl rounded-[2rem] p-6 sm:p-12 lg:p-16">
-        <SectionLabel index="01" label={heritageContent.kicker} />
+        <SectionLabel label={heritageContent.kicker} />
 
         <TextReveal
           as="h2"

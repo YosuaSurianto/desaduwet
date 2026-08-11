@@ -1,0 +1,53 @@
+/**
+ * map.css
+ * ---------------------------------------------------------------------------
+ * Skin for the Leaflet map in the "Lokasi" section. Tiles already come from
+ * CARTO's dark basemap, so this file only themes the chrome Leaflet renders
+ * itself (zoom buttons, popups, markers) so it doesn't default back to
+ * Leaflet's stock light-mode UI against the site's ink/cream palette.
+ */
+
+.village-map .leaflet-control-zoom a {
+  background: rgba(19, 15, 10, 0.75);
+  color: var(--color-cream-50);
+  border-color: rgba(246, 239, 225, 0.15);
+}
+
+.village-map .leaflet-control-zoom a:hover {
+  background: rgba(19, 15, 10, 0.92);
+}
+
+.village-map .leaflet-popup-content-wrapper,
+.village-map .leaflet-popup-tip {
+  background: rgba(19, 15, 10, 0.94);
+  color: var(--color-cream-50);
+  box-shadow: 0 12px 32px -12px rgba(19, 15, 10, 0.8);
+}
+
+.village-map .leaflet-popup-content {
+  margin: 0.85rem 1rem;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+.village-map .leaflet-container {
+  background: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Verified-coordinate pin: solid gold dot, reuses the .pulse-ring keyframe
+   from animations.css. Approximate-area pin: dashed outline, no pulse, so
+   the two read as visually distinct confidence levels. */
+.map-pin {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--color-gold-400);
+  border: 2px solid var(--color-cream-50);
+}
+
+.map-pin-approx {
+  background: transparent;
+  border: 2px dashed rgba(246, 239, 225, 0.6);
+}

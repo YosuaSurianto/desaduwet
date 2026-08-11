@@ -13,7 +13,7 @@ export default function CtaSection() {
 
       <RevealOnScroll delay={0.2} className="mt-6 max-w-xl">
         <p className="text-base leading-relaxed text-cream-100/75 sm:text-lg">
-          Dari kukusan nasi liwet dini hari hingga percikan air di Duwet Waterpark — Desa Duwet menanti untuk dijelajahi, bukan sekadar dibaca.
+          Dari kukusan nasi liwet dini hari hingga angin sawah di Sarapan Kopi, Desa Duwet menanti untuk dijelajahi, bukan sekadar dibaca.
         </p>
       </RevealOnScroll>
 

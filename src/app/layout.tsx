@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { MotionConfig } from "framer-motion";
+import { Analytics } from "@vercel/analytics/next";
 
 import ScrollVideoBackground from "@/components/background/ScrollVideoBackground";
 import GrainOverlay from "@/components/background/GrainOverlay";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar />
           {children}
         </MotionConfig>
+        <Analytics />
       </body>
     </html>
   );

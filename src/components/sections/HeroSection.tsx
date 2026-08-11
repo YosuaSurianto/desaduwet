@@ -17,7 +17,10 @@ export default function HeroSection() {
       id="top"
       className="relative z-10 flex min-h-dvh flex-col justify-between px-gutter pb-8 pt-28 sm:pb-12 sm:pt-36"
     >
-      <div className="flex-1" />
+      {/* Mobile: no spacer, so the title sits near the top instead of
+          drifting toward the middle/bottom of the viewport. Desktop keeps
+          the original flex-1 centering untouched. */}
+      <div className="hidden sm:block sm:flex-1" />
 
       <div className="max-w-4xl">
         <RevealOnScroll y={12} inView={false}>

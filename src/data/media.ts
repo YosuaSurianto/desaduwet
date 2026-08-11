@@ -1,17 +1,22 @@
 /**
  * media.ts — background video asset.
  *
- * Served locally from public/videos/ instead of hotlinking Pexels' CDN, and
- * re-encoded specifically for scroll-scrubbing: every frame is its own
- * keyframe (`-g 1 -keyint_min 1` in the ffmpeg pass under assets-src/video/),
- * so GSAP can seek `video.currentTime` to any point instantly instead of
- * decoding forward from the nearest keyframe — that decode-forward cost was
- * the actual cause of the "kaku"/stiff scrubbing feel, not the GSAP tween
- * itself. Same visual footage as before, just re-encoded; nothing about the
- * background's look was changed.
+ * Two encodes of the same footage, both all-keyframe (`-g 1 -keyint_min 1`)
+ * for instant scroll-scrub seeking (see assets-src/video/ for the ffmpeg
+ * passes):
+ * - `src`: 1280px wide, 12fps-equivalent — desktop, decoded fine there.
+ * - `srcMobile`: 720px wide, 10fps-equivalent, ~4.6MB — phones have weaker
+ *   video decoders, so smaller frames matter more than smoothness-from-
+ *   quantity here. The browser itself picks between them via <source
+ *   media="..."> in ScrollVideoBackground, before either file downloads.
+ * `fps` is the encoded frame rate, used to quantize scrub seeks to actual
+ * frame boundaries instead of reassigning currentTime on every scroll tick.
  */
 
 export const scrollVideo = {
   src: "/videos/hero-sawah-scrub.mp4",
+  srcMobile: "/videos/hero-sawah-scrub-mobile.mp4",
+  fps: 12,
+  fpsMobile: 10,
   description: "Drone footage rice terraces dengan pohon kelapa & palem",
 };

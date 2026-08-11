@@ -7,11 +7,20 @@ import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { gsap } from "@/lib/gsap";
 
+// Keep in sync with the <source media="..."> breakpoint below — used to
+// pick the matching encoded frame rate for scrub quantization.
+const MOBILE_QUERY = "(max-width: 767px)";
+
 /**
  * Fixed, full-viewport cinematic video whose playhead is entirely driven by
- * scroll position — never by autoplay. GSAP tweens `video.currentTime` from
- * 0 to `video.duration`, scrubbed against the whole document's scroll range,
- * so scrolling down plays it forward and scrolling up rewinds it exactly.
+ * scroll position — never by autoplay. GSAP tweens a plain proxy value from
+ * 0 to 1, scrubbed against the whole document's scroll range, and only
+ * writes it to `video.currentTime` when it has actually crossed into a new
+ * encoded frame — scrolling fires far more update ticks per second than the
+ * video has frames, so without this a phone's weaker decoder gets asked to
+ * re-seek to essentially the same frame dozens of times a second, which is
+ * what made the scrub feel choppy specifically on mobile (desktop hardware
+ * just absorbs the redundant seeks).
  */
 export default function ScrollVideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,9 +38,21 @@ export default function ScrollVideoBackground() {
       scrubTween?.scrollTrigger?.kill();
       scrubTween?.kill();
 
-      scrubTween = gsap.to(video, {
-        currentTime: video.duration,
+      const fps = window.matchMedia(MOBILE_QUERY).matches
+        ? scrollVideo.fpsMobile
+        : scrollVideo.fps;
+      const frameDuration = 1 / fps;
+      const progress = { value: 0 };
+
+      scrubTween = gsap.to(progress, {
+        value: 1,
         ease: "none",
+        onUpdate: () => {
+          const target = progress.value * video.duration;
+          if (Math.abs(target - video.currentTime) >= frameDuration * 0.9) {
+            video.currentTime = target;
+          }
+        },
         scrollTrigger: {
           trigger: document.body,
           start: "top top",
@@ -68,6 +89,10 @@ export default function ScrollVideoBackground() {
         aria-hidden
         className="h-full w-full object-cover"
       >
+        {/* Browser picks the first matching <source> before downloading
+            anything — this is the native responsive-video mechanism, same
+            idea as <picture> for images. */}
+        <source media={MOBILE_QUERY} src={scrollVideo.srcMobile} type="video/mp4" />
         <source src={scrollVideo.src} type="video/mp4" />
       </video>
 

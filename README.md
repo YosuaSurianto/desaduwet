@@ -71,10 +71,12 @@ Pastikan Anda telah menginstal Node.js 20+.
 
 ## 📄 Lisensi & Hak Cipta
 
-- **Source Code (Dual License)**: Dirilis di bawah [MIT License](LICENSE) **ATAU** [GNU GPLv3](LICENSE-GPL). Pengguna (*developer* lain) bebas memilih salah satu:
-  1. Pakai MIT jika ingin leluasa menggunakannya tanpa syarat ketat.
-  2. Pakai GPLv3 jika proyek turunan mereka juga harus dirilis sebagai *open-source*.
-- **Konten & Aset**: Semua teks sejarah, foto, branding, dan identitas "Desa Duwet" adalah **Hak Cipta Sepenuhnya (All Rights Reserved)** milik pembuat dan entitas desa terkait. Tolong jangan asal *copas* kontennya untuk desa lain ya!
+- **Source Code (Dual License)**: Bagian *source code* dari proyek ini (termasuk implementasi Next.js, animasi GSAP, dan *styling*) dirilis di bawah [MIT License](LICENSE) **ATAU** [GNU GPLv3](LICENSE-GPL). Pengembang lain bebas memilih lisensi yang paling sesuai dengan kebutuhan distribusi proyek mereka.
+- **Konten & Aset**: Seluruh hak cipta atas teks sejarah, narasi, fotografi, *branding*, dan identitas visual "Desa Duwet" **dilindungi sepenuhnya (All Rights Reserved)**. Penggunaan, penyalinan, atau pendistribusian ulang aset-aset tersebut untuk entitas lain tanpa izin tertulis adalah dilarang keras.
+
+## 👨‍💻 Penulis & Kredit
+
+Dikembangkan oleh **Yosua Surianto (Dracoo)**.
 
 ---
 *Dikembangkan dengan presisi, pemikiran kritis, dan rasa hormat terhadap warisan budaya.*
@@ -152,10 +154,12 @@ Ensure you have Node.js 20+ installed.
 
 ## 📄 License & Copyright
 
-- **Source Code (Dual License)**: Released under either the [MIT License](LICENSE) **OR** the [GNU GPLv3](LICENSE-GPL). Users can choose the license that best fits their needs:
-  1. Use MIT for maximum permissiveness.
-  2. Use GPLv3 to ensure any derivative works are also open-sourced.
-- **Content & Assets**: All historical text, photos, branding, and the "Desa Duwet" identity are **All Rights Reserved** by the creator and the respective village entity. Please do not blindly copy-paste the content for another village!
+- **Source Code (Dual License)**: The source code of this project (including the Next.js implementation, GSAP animations, and styling) is released under either the [MIT License](LICENSE) **OR** the [GNU GPLv3](LICENSE-GPL). Developers are free to choose the license that best fits their distribution needs.
+- **Content & Assets**: All copyrights regarding historical texts, narratives, photography, branding, and the visual identity of "Desa Duwet" are **strictly protected (All Rights Reserved)**. Unauthorized use, copying, or redistribution of these specific assets for other entities is strictly prohibited.
+
+## 👨‍💻 Author & Credits
+
+Developed by **Yosua Surianto (Dracoo)**.
 
 ---
 *Developed with precision, critical thinking, and respect for heritage.*
